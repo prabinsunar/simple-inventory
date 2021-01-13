@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		/>
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="/stylesheets/style.css" type="text/css" />
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-2"><%- include('partials/sidebar.ejs')%></div>
+				<div class="col-sm-10">
+					<h1>List of all the items available:</h1>
+					<ul class="list-low-separate">
+						<% for(const item of item_list) { %>
+						<li>
+							<a href="<%= item.url %>"
+								><%= item.name %> (<%= item.number_in_stock%>)</a
+							>
+						</li>
+						<% } %>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+body {
+	padding: 50px;
+	font: 20px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+a {
+	color: #00b7ff;
+}
+
+.sidebar-nav {
+	padding: 0;
+	list-style: none;
+	margin-top: 40px;
+}
+
+.col-sm-10 > ul {
+	list-style: none;
+}
+
+.list-low-separate > li {
+	margin-bottom: 10px;
+}
+
+#update,
+#delete {
+	color: white;
+}
+
+#update:hover,
+#delete:hover {
+	text-decoration: none;
+}

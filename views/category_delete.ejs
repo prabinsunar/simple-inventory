@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		/>
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="/stylesheets/style.css" />
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-2"><%- include('partials/sidebar.ejs')%></div>
+				<div class="col-sm-10">
+					<%if(items != false) {%>
+					<h4>Delete the following items first:</h4>
+					<hr />
+					<% for(let item of items) {%>
+
+					<h5>Item: <a href="<%= item.url %>"><%= item.name %></a></h5>
+					<p>Description: <%= item.description %></p>
+					<% }%> <%}else{%>
+					<h3>Are you sure to delete this item?</h3>
+					<h5>Category: <%= category.name%></h5>
+					<form action="" method="POST">
+						<input
+							type="hidden"
+							name="categoryid"
+							value="<%=category._id%>"
+							required="true"
+						/>
+						<button class="btn btn-primary" type="submit">Submit</button>
+					</form>
+					<%}%>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
